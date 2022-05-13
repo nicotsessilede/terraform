@@ -46,3 +46,5 @@ allowed_headers                    = ["*"]
 exposed_headers                    = ["*"]
 max_age_in_seconds                 = 60 * 60 * 24 * 2
 cdn_profile_name                   = "dev-cdn-profile"
+
+waf_name                           = "my-waf"
