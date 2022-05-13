@@ -28,11 +28,6 @@ resource "azurerm_application_gateway" "network" {
     name = local.backend_address_pool_name
           ip_addresses = [data.azurerm_container_group.mycon.ip_address, "2.3.4.5"]
     }
-  }
-data "azurerm_container_group" "mycon" {
-  name                = "${var.env}-hello-world"
-  resource_group_name = "resource-group"
-}
 
   backend_http_settings {
     name                  = local.http_setting_name
@@ -70,4 +65,10 @@ resource "azurerm_public_ip" "pip" {
   resource_group_name = azurerm_resource_group.resource-group.name
   location            = azurerm_resource_group.resource-group.location
   allocation_method   = "Dynamic"
+}
+}
+
+data "azurerm_container_group" "mycon" {
+  name                = "${var.env}-hello-world"
+  resource_group_name = "resource-group"
 }
