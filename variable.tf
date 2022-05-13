@@ -6,10 +6,6 @@ variable "location" {
     type = string
     description = "location"
 }
-variable "waf_name" {
-    type = string
-    description = "waf name"
-}
 variable "vnet_name" {
     type = string
     description = "name of vnet"
