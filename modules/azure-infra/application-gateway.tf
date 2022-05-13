@@ -26,17 +26,14 @@ resource "azurerm_application_gateway" "network" {
 
   backend_address_pool {
     name = local.backend_address_pool_name
-          ip_addresses = ["1.2.3.4", "2.3.4.5"]
+          ip_addresses = [data.azurerm_container_group.mycon.ip_address, "2.3.4.5"]
     }
   }
 data "azurerm_container_group" "mycon" {
-  name                = "existing"
-  resource_group_name = "existing"
+  name                = "${var.env}-hello-world"
+  resource_group_name = "resource-group"
 }
 
-output "ip_address" {
-  value = data.azurerm_container_group.mycon.ip_address
-}
   backend_http_settings {
     name                  = local.http_setting_name
     cookie_based_affinity = "Disabled"
