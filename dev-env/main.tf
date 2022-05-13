@@ -43,3 +43,4 @@ module "dev-azure-infra" {
     allowed_headers                    = var.allowed_headers
     exposed_headers                    = var.exposed_headers
     max_age_in_seconds                 = var.max_age_in_seconds
+  }
