@@ -67,7 +67,6 @@ output "ip_address" {
     tags = {
       "env" = "${var.env}"
     }
-}
 
 resource "azurerm_public_ip" "pip" {
   name                = "${var.env}-pip"
