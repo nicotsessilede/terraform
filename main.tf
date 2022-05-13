@@ -1,5 +1,5 @@
 module "dev-azure-infra" {
-    source                             = "modules/azure-infra"
+    source                             = "./modules/azure-infra"
     env                                = var.env
     location                           = var.location
     nsg_name                           = var.nsg_name
