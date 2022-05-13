@@ -21,6 +21,11 @@ variable "nsg_name" {
     description = "name of nsg"
 }
 
+variable "waf_name" {
+    type = string
+    description = "waf name"
+}
+
 variable "private_subnet_names" {
     type = list(string)
     description = "name of private subnets"
